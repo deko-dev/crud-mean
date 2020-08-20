@@ -1,1 +1,41 @@
-<p>home works!</p>
+<div class="row mt-5">
+    <div class="col-8">
+        <h2>CRUD con MEAN Stack</h2>
+    </div>
+    <div class="col-4">
+        <button class="btn btn-outline-primary m-3" [routerLink]="['/producto', 'new']">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+<hr>
+<table class="table">
+    <thead>
+        <tr class="table-dark">
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of productos, let i = index">
+            <th scope="row">{{ producto._id }}</th>
+            <td>{{ producto.name }}</td>
+            <td>{{ producto.category }}</td>
+            <td>{{ producto.precio }}</td>
+            <td>
+
+                <button class="btn btn-primary mr-2" [routerLink]="['/producto', producto._id]">
+                    <i class="fas fa-edit"></i>
+                </button>
+                <button class="btn btn-danger" (click)="borrarProducto(producto._id, i)">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+
+
+            </td>
+        </tr>
+    </tbody>
+</table>

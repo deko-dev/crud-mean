@@ -1,1 +1,74 @@
-<p>producto works!</p>
+<div class="row">
+    <h2 *ngIf="isNew">Agregar Producto</h2>
+    <h2 *ngIf="!isNew">Editanto: {{ nameProducto }}</h2>
+    <!-- Botón regresar ( regresa a la página principal '/home' ) -->
+    <div class="row text-right">
+        <div class="col">
+            <button class="btn btn-danger" routerLink="/home">
+                <i class="fa fa-arrow-left"></i>
+                Regresar
+            </button>
+        </div>
+    </div>
+</div>
+<hr>
+
+
+<div class="row">
+
+    <div class="col">
+
+        <form (ngSubmit)="guardar()" [formGroup]="forma">
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">
+                    Id:
+                </label>
+                <div class="col">
+                    <input *ngIf="isNew" class="form-control" type="text" placeholder="id" formControlName="_id" disabled>
+                    <input *ngIf="!isNew" class="form-control" type="text" placeholder="id" formControlName="_id">
+                </div>
+            </div>
+
+            <div class="form-group row  mt-3">
+                <label class="col-2 col-form-label">
+                    Nombre:
+                </label>
+                <div class="col">
+                    <input class="form-control" type="text" placeholder="Nombre del Producto" formControlName="name" requerid>
+                </div>
+            </div>
+
+            <div class="form-group row  mt-3">
+                <label class="col-2 col-form-label">
+                    Categoria:
+                </label>
+                <div class="col">
+                    <input class="form-control" type="text" placeholder="Nombre del Producto" formControlName="category" requerid>
+                </div>
+            </div>
+
+            <div class="form-group row  mt-3">
+                <label class="col-2 col-form-label">
+                    Precio:
+                </label>
+                <div class="col">
+                    <input class="form-control" type="text" placeholder="Precio del Producto" formControlName="precio" requerid>
+                </div>
+            </div>
+
+
+            <div class="form-group row mt-3">
+                <label class="col-2 col-form-label">&nbsp;</label>
+                <div class="input-group col">
+                    <button type="submit" class="btn btn-outline-primary btn-block">
+                Guardar
+              </button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

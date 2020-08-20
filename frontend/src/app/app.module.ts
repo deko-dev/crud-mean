@@ -5,6 +5,11 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductoComponent } from './pages/producto/producto.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { AppRoutingModule } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -14,7 +19,10 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     NavbarComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
