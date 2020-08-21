@@ -15,7 +15,7 @@ export interface Producto {
 })
 export class ProductosService {
 
-  private url = "http://localhost:3000/api/productos";
+  private url = "https://server-node-mean.herokuapp.com/api/productos";
 
 
   constructor(
